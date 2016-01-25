@@ -21,4 +21,8 @@ __declspec(align(32)) struct vec3
 		struct { float x, y, z; };
 		struct { float r, g, b; };
 	};
+
+	// unary and assignment operations
 };
+
+// binary operations

@@ -38,6 +38,8 @@ vec4 min        (const vec4 &a, const vec4 &b);
 vec4 max        (const vec4 &a, const vec4 &b);
 vec4 clamp      (const vec4 &a, const vec4 &min, const vec4 &max);
 
+float angleBetween(const vec4 &a, const vec4 &b);
+
 vec4 mix        (const vec4 &start, const vec4 &end, float t);
 vec4 lerp       (const vec4 &start, const vec4 &end, float t);
 

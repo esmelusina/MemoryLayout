@@ -26,7 +26,8 @@ __declspec(align(32)) struct vec3
 	};
 };
 
-vec3 normal (const vec3 &a);
+
+vec3 normal     (const vec3 &a);
 
 float magnitude (const vec3 &a);
 float dot       (const vec3 &a, const vec3 &b);
@@ -34,12 +35,20 @@ float distance  (const vec3 &a, const vec3 &b);
 
 vec3 cross      (const vec3 &a, const vec3 &b);
 
+float angleBetween(const vec3 &a, const vec3 &b);
+
 vec3 min        (const vec3 &a, const vec3 &b);
 vec3 max        (const vec3 &a, const vec3 &b);
 vec3 clamp      (const vec3 &a, const vec3 &min, const vec3 &max);
 
+#define MIN  (a,b)      (a<b?a:b)
+#define MAX  (a,b)      (a<b?b:a)
+#define CLAMP(a,b,c)    MAX(MIN(a,c),b)
+#define LERP (a,b,c)    ((1-c)*a+c*b)
+
 vec3 mix        (const vec3 &start, const vec3 &end, float t);
 vec3 lerp       (const vec3 &start, const vec3 &end, float t);
+
 
 vec3 reflect    (const vec3 &incident, const vec3 &normal);
 vec3 project    (const vec3 &a, const vec3 &b);

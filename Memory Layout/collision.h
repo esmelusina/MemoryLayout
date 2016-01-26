@@ -37,5 +37,5 @@ CollisionData mtv_aabb_plane     (const aabb   &a, const plane  &b);
 CollisionData mtv_aabb_ray       (const aabb   &a, const ray    &b);
 CollisionData mtv_circle         (const circle &a, const circle &b);
 CollisionData mtv_circle_plane   (const circle &a, const plane  &b);
-CollisionData mtv_circle_ray    (const circle  &a, const ray    &b);
-CollisionData mtv_ray_plane     (const ray     &a, const plane  &b);
+CollisionData mtv_circle_ray     (const circle  &a, const ray    &b);
+CollisionData mtv_ray_plane      (const ray     &a, const plane  &b);

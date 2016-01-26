@@ -17,7 +17,17 @@ template<size_t RANGE>
 class tvec
 {
 protected:
-	float m_data[RANGE];
+    union
+    {
+        float m_data[RANGE];
+        struct
+        {
+            float x; // enable_if
+            float y; // 
+            float z;
+            float w;
+        };
+    };
 public:
 	constexpr size_t size()	   { return RANGE; }
 	explicit operator float*() { return m_data; }

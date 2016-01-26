@@ -39,12 +39,15 @@
     <ClInclude Include="mat3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="sat.h">
+    <ClInclude Include="collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="collision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

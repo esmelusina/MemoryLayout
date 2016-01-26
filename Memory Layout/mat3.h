@@ -28,4 +28,22 @@ __declspec(align(32)) struct mat3
             union { vec3 c3; vec2 position; };
         };
     };
+
+    static constexpr mat3 identity();
 };
+
+mat3 operator+(const mat3 &a, const mat3 &b);
+mat3 operator-(const mat3 &a, const mat3 &b);
+mat3 operator*(const mat3 &a, const mat3 &b);
+
+mat3 &operator+=(const mat3 &a, const mat3 &b);
+mat3 &operator-=(const mat3 &a, const mat3 &b);
+mat3 &operator*=(const mat3 &a, const mat3 &b);
+
+
+mat3 transpose  (const mat3 &a);
+mat3 inverse    (const mat3 &a);
+
+mat3 rotate     (float a);
+mat3 translate  (const vec2 &xy);
+mat3 scale      (const vec2 &xy);

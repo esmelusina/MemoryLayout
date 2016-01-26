@@ -118,9 +118,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="collision.h" />
     <ClInclude Include="mat3.h" />
     <ClInclude Include="mat4.h" />
-    <ClInclude Include="sat.h" />
     <ClInclude Include="Shapes.h" />
     <ClInclude Include="tmat.h" />
     <ClInclude Include="tvec.h" />
@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="collision.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

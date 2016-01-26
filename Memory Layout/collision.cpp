@@ -3,19 +3,17 @@
 #include <cmath>
 #include <list>
 #include <algorithm>
+#include "collision.h"
+
 
 CollisionData iTest_SAT(const ConvexHull &A, const ConvexHull &B)
 {
-    CollisionData cd = { INFINITY };
+    CollisionData cd = { false, INFINITY };
 
     std::vector<vec2> axes;
     std::vector<float> pdepth;
     axes.reserve(A.verts.size() + B.verts.size());
-    
-    // Determine all of the possible axes of separation.     
-        // for each shape  
-            // for each adjacent pair of vertices
-                // perpendicular vector of the normal of the difference
+           
     for (int i = 0; i < A.verts.size(); ++i)
         axes.push_back(perp(normal(A.verts[i]-A.verts[(i+1) % A.verts.size()])));
 
@@ -30,27 +28,29 @@ CollisionData iTest_SAT(const ConvexHull &A, const ConvexHull &B)
 
         for (int i = 0; i < A.verts.size(); ++i)
         {
-            float pp;
-            // calculate the projected point!
+            float pp = dot(axes[i],A.verts[i]);
             amin = fminf(pp, amin);
             amax = fminf(pp, amax);
         }
 
-        for (int i = 0; i < A.verts.size(); ++i)
+        for (int i = 0; i < B.verts.size(); ++i)
         {
-            float pp;
-            // calculate the projected point!
+            float pp = dot(axes[i], B.verts[i]);            
             amin = fminf(pp, amin);
             amax = fminf(pp, amax);
         }
 
-        float pdepth = fminf(amax - bmin, bmax - amin);
+        float pdepth = (cd.PenetrationDepth < 0)? : fminf(amax - bmin, bmax - amin);
+
         if (pdepth < cd.PenetrationDepth)
         {
-            cd = { pdepth, axes[i] };
+            cd = { pdepth < 0, pdepth, axes[i] };
             if (pdepth < 0) return cd;
-        }
+        }  
     }
-
-    
 }
+
+
+//float pdepth = (cd.PenetrationDepth < 0) ?
+//    -fminf(fabs(amax - bmin), fabs(bmax - amin)) :
+//    fminf(amax - bmin, bmax - amin);

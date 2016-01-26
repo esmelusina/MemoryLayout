@@ -6,7 +6,7 @@
 #include "collision.h"
 
 
-CollisionData iTest_SAT(const ConvexHull &A, const ConvexHull &B)
+CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
 {
     CollisionData cd = { false, INFINITY };
 
@@ -49,8 +49,3 @@ CollisionData iTest_SAT(const ConvexHull &A, const ConvexHull &B)
         }  
     }
 }
-
-
-//float pdepth = (cd.PenetrationDepth < 0) ?
-//    -fminf(fabs(amax - bmin), fabs(bmax - amin)) :
-//    fminf(amax - bmin, bmax - amin);

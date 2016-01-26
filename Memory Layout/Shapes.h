@@ -7,19 +7,19 @@ struct plane;
 struct vec2;
 struct mat3;
 
-// Useful, but not necessary yet
+// Useful, but not necessary yet!
 aabb   operator*(const mat3 &m, const aabb   &a);
 circle operator*(const mat3 &m, const circle &a);
 ray    operator*(const mat3 &m, const ray    &a);
 plane  operator*(const mat3 &m, const plane  &a);
 
+float point_plane_dist (const vec2 &a,  const plane &b);
+float ray_plane_dist   (const ray  &a,  const plane &b);
 
-float point_plane_dist(const vec2 &a, const plane &b);
-float ray_plane_dist(const ray  &a, const plane &b);
-
-vec2 min(const vec2 &a, const vec2 &b);
-vec2 max(const vec2 &a, const vec2 &b);
-vec2 clamp(const vec2 &a, const vec2 &min, const vec2 &max);
+// Should also have way to access a min and max
+vec2 min   (const vec2 &a, const vec2 &b);
+vec2 max   (const vec2 &a, const vec2 &b);
+vec2 clamp (const vec2 &a, const vec2 &min, const vec2 &max);
 
 // determine whether or not the shapes are overlapping... fast!
 bool iTest_aabb				(const aabb   &a, const aabb	&b);
@@ -57,9 +57,10 @@ struct plane
 
 struct circle
 {
-	vec2 p;  // position
+	vec2  p;  // position
 	float r; // radius
 };
+
 struct aabb
 {
 	vec2 p, e; // position and half-extents

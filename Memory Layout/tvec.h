@@ -49,9 +49,9 @@ public:
 };
 
 
-// When using the overloads with inheritance
-__declspec(align(32)) class vec3 : public tvec<3>
-{
-public:
-	vec3 cross(const vec3 &rhs);
-};
+// Could do stuff like this
+//__declspec(align(32)) class vec3 : public tvec<3>
+//{
+//public:
+//	vec3 cross(const vec3 &rhs);
+//};

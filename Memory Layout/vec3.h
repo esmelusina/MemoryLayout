@@ -1,5 +1,5 @@
 #pragma once
- 
+#include "vec2.h"
 /*
 Example memory layouts and data structure designs for math types.
 
@@ -12,11 +12,12 @@ Esmeralda Salamone, esmes@aie.edu.au, 1/25/2016
 For instructional use.
 */
 
-
+    
 __declspec(align(32)) struct vec3
 {
 	union
 	{
+        vec2 xy;
 		float v[3];
 		struct { float x, y, z; };
 		struct { float r, g, b; };

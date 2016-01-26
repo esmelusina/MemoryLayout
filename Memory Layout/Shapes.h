@@ -1,11 +1,11 @@
 #pragma once
+#include "vec2.h"
+#include "mat3.h"
 
 struct aabb;
 struct circle;
 struct ray;
 struct plane;
-struct vec2;
-struct mat3;
 
 // Useful, but not necessary yet!
 aabb   operator*(const mat3 &m, const aabb   &a);
@@ -13,6 +13,7 @@ circle operator*(const mat3 &m, const circle &a);
 ray    operator*(const mat3 &m, const ray    &a);
 plane  operator*(const mat3 &m, const plane  &a);
 
+// Some distance algorithms from the slides
 float point_plane_dist (const vec2 &a,  const plane &b);
 float ray_plane_dist   (const ray  &a,  const plane &b);
 

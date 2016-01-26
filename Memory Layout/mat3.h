@@ -14,16 +14,18 @@ For instructional use.
 */
 
 
-__declspec(align(32)) struct vec4
+__declspec(align(32)) struct mat3
 {
-	union
-	{
-        vec3 xyz;
-		float v[4];
-		struct { float x, y, z, w; };
-		struct { float r, g, b, a; };
-	};
-    //unary operations and assignments
+    union
+    {
+        vec3  c[3];
+        float m[9];
+        float mm[3][3];
+        struct
+        {
+            union { vec3 c1; vec2 right; };
+            union { vec3 c2; vec2 up; };
+            union { vec3 c3; vec2 position; };
+        };
+    };
 };
-
-//binary operations

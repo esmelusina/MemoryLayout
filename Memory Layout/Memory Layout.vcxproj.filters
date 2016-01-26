@@ -27,5 +27,14 @@
     <ClInclude Include="tvec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tmat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

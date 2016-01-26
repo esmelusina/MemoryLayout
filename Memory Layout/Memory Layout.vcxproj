@@ -118,7 +118,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="mat4.h" />
+    <ClInclude Include="Shapes.h" />
+    <ClInclude Include="tmat.h" />
     <ClInclude Include="tvec.h" />
     <ClInclude Include="vec3.h" />
     <ClInclude Include="vec4.h" />

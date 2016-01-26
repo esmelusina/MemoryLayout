@@ -30,9 +30,6 @@
     <ClInclude Include="tmat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shapes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="vec2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -40,6 +37,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

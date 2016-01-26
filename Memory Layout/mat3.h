@@ -34,15 +34,22 @@ __declspec(align(32)) struct mat3
 
 mat3 operator+(const mat3 &a, const mat3 &b);
 mat3 operator-(const mat3 &a, const mat3 &b);
-mat3 operator*(const mat3 &a, const mat3 &b);
+mat3 operator*(const mat3 &a, const mat3 &b);   //matrix
+vec3 operator*(const mat3 &a, const vec3 &b);   //vector
+mat3 operator*(const mat3 &a, float b);         //scalar
 
-mat3 &operator+=(const mat3 &a, const mat3 &b);
-mat3 &operator-=(const mat3 &a, const mat3 &b);
-mat3 &operator*=(const mat3 &a, const mat3 &b);
+mat3 &operator+=(mat3 &a, const mat3 &b);
+mat3 &operator-=(mat3 &a, const mat3 &b);
+mat3 &operator*=(mat3 &a, const mat3 &b);
+mat3 &operator*=(mat3 &a, float b);
 
+bool operator==(const mat3 &a, const mat3 &b);
+bool operator!=(const mat3 &a, const mat3 &b);
 
 mat3 transpose  (const mat3 &a);
 mat3 inverse    (const mat3 &a);
+
+float determinant(const mat3 &a);
 
 mat3 rotate     (float a);
 mat3 translate  (const vec2 &xy);

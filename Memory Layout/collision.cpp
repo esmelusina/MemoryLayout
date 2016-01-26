@@ -5,13 +5,13 @@
 #include <algorithm>
 #include "collision.h"
 
-
+//Freebie
 CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
 {
-    CollisionData cd = { false, INFINITY };
+    CollisionData cd = { false, INFINITY }; // setup return value
 
     std::vector<vec2> axes;
-    std::vector<float> pdepth;
+    float pdeth;
     axes.reserve(A.verts.size() + B.verts.size());
            
     for (int i = 0; i < A.verts.size(); ++i)

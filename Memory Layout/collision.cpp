@@ -20,7 +20,6 @@ CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
     for (int i = 0; i < B.verts.size(); ++i)
         axes.push_back(perp(normal(B.verts[i] - B.verts[(i + 1) % B.verts.size()])));
 
-
     for (int i = 0; i < axes.size(); ++i)
     {
         float amin = INFINITY, amax = -INFINITY;
@@ -40,7 +39,7 @@ CollisionData sat_hull(const ConvexHull &A, const ConvexHull &B)
             amax = fminf(pp, amax);
         }
 
-        float pdepth = (cd.PenetrationDepth < 0)? : fminf(amax - bmin, bmax - amin);
+        float pdepth = fminf(amax - bmin, bmax - amin);
 
         if (pdepth < cd.PenetrationDepth)
         {

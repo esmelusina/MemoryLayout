@@ -41,11 +41,6 @@ vec3 min        (const vec3 &a, const vec3 &b);
 vec3 max        (const vec3 &a, const vec3 &b);
 vec3 clamp      (const vec3 &a, const vec3 &min, const vec3 &max);
 
-#define MIN  (a,b)      (a<b?a:b)
-#define MAX  (a,b)      (a<b?b:a)
-#define CLAMP(a,b,c)    MAX(MIN(a,c),b)
-#define LERP (a,b,c)    ((1-c)*a+c*b)
-
 vec3 mix        (const vec3 &start, const vec3 &end, float t);
 vec3 lerp       (const vec3 &start, const vec3 &end, float t);
 

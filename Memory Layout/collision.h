@@ -3,9 +3,10 @@
 
 struct CollisionData // Wrapper for Minimum Translation Vector
 {
-    bool collides;          // true-false
-    float PenetrationDepth; // -Distance
-    vec2  CollisionNormal;  // Direction
+    bool  collides;         
+    float PenetrationDepth; 
+    vec2  CollisionNormal;  
+    vec2  PointOfContact;   
 };
 
 // Some distance formula

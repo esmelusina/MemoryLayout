@@ -25,6 +25,7 @@ float distance  (const vec2 &a, const vec2 &b);
 float angleBetween(const vec2 &a, const vec2 &b);
 
 // component-wise, new vector of biggest/smallest x and y separately
+vec2 abs        (const vec2 &a);
 vec2 min        (const vec2 &a, const vec2 &b);
 vec2 max        (const vec2 &a, const vec2 &b);
 vec2 clamp      (const vec2 &a, const vec2 &min, const vec2 &max);
@@ -38,8 +39,10 @@ vec2 lerp       (const vec2 &start, const vec2 &end, float t);
 // incident - 2*dot(incident,normal)*normal
 vec2 reflect    (const vec2 &incident, const vec2 &normal);
 
-//dot(a,b) * normal(b)
+// dot(a,b) * normal(b)
 vec2 project    (const vec2 &a, const vec2 &b);
+
+
 
 vec2 operator-(const vec2 &a);
 

@@ -46,12 +46,14 @@ mat4 &operator*=(mat4 &a, float b);
 bool operator==(const mat4 &a, const mat4 &b);
 bool operator!=(const mat4 &a, const mat4 &b);
 
-mat4 transpose(const mat4 &a);
-mat4 inverse(const mat4 &a); //aka, the terror
+mat4 transpose  (const mat4 &a);
 
-mat4 rotate(const vec3 &axis, float angle);
-mat4 scale(const vec3 &xyz);
-mat4 translate(const vec3 &xyz);
+//http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche23.html
+mat4 inverse    (const mat4 &a); //aka, the terror
+
+mat4 rotate     (const vec3 &axis, float angle);
+mat4 scale      (const vec3 &xyz);
+mat4 translate  (const vec3 &xyz);
 
 float determinant(const mat4 &a);
 
@@ -59,4 +61,3 @@ mat4 ortho      (float l, float r, float t, float b, float n, float f);
 mat4 frustum    (float l, float r, float t, float b, float n, float f);
 mat4 perspective(float fov, float aspect, float n, float f); // assert n > 0 && f > n
 mat4 lookAt     (const vec3 &eye, const vec3 &target, const vec3 &up);
-

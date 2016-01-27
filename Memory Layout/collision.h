@@ -18,7 +18,7 @@ CollisionData sat_hull          (const ConvexHull &A, const ConvexHull &B);
 
 // optimized edge-cases
 CollisionData sat_hull_circle   (const ConvexHull &A, const circle     &b); // use radius in all axes of convex hull
-CollisionData sat_hull_ray      (const ConvexHull &A, const ray        &b); // combination of circle and plane algorithms*
+CollisionData sat_hull_ray      (const ConvexHull &A, const ray        &b); // combination of circle and plane algorithms, freebie
 CollisionData sat_hull_plane    (const ConvexHull &A, const plane      &b); // only axis is the plane
 CollisionData sat_hull_AABB     (const ConvexHull &A, const aabb       &b); // aabb only contributes 2 axes
 

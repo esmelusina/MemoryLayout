@@ -3,7 +3,10 @@
 #include "mat3.h"
 #include <vector>
 
-//different shapes of varying utility
+//Different shapes of varying utility.
+
+// note that this isn't guaranteed to be a convex hull- needs an
+// algorithm to test it.
 struct ConvexHull { std::vector<vec2> verts;                  };
 struct ray        { vec2 position, direction; float length;   };
 struct plane      { vec2 position, normal;                    };

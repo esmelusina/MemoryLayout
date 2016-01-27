@@ -1,10 +1,11 @@
 #pragma once
 
+//16-bytes
 __declspec(align(32)) struct vec2
 {
     union
     {
-        float v[2];
+        float v[2]; //[xxxx][yyyy]
         struct { float x, y; };
         struct { float s, t; };
     };

@@ -47,6 +47,8 @@ bool operator==(const mat3 &a, const mat3 &b);
 bool operator!=(const mat3 &a, const mat3 &b);
 
 mat3 transpose  (const mat3 &a);
+
+//http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche23.html
 mat3 inverse    (const mat3 &a);
 
 float determinant(const mat3 &a);

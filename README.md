@@ -20,3 +20,6 @@ Very Important Things:
 	------------------
 
 Most of the other stuff is less essential.
+
+For inverse matrix:
+http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche23.html

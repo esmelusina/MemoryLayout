@@ -24,14 +24,19 @@
     <ClInclude Include="VMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VMath\Vector3.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
     <ClInclude Include="VMath\Matrix3.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="VMath\Vector2.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="VMath\Vector3.h">
-      <Filter>Header Files\Math</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VMath\Matrix3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

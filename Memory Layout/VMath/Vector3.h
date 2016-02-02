@@ -52,7 +52,7 @@ inline bool operator==(const Vector3 &lhs, const Vector3 &rhs)
     //       fabsf(rhs.y - lhs.y) < FLT_EPSILON;
 }
 
-Vector3 normal(const Vector3 &a)
+inline Vector3 normal(const Vector3 &a)
 {
     //assert(magnitude() != 0 && "Divide by Zero");
     return a / a.magnitude();

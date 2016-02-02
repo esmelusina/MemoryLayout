@@ -7,6 +7,7 @@ struct Matrix3
     Matrix3() {}
     union
     {
+        float   v[9];
         float   m[3][3];
         Vector3 c[3];
     };
@@ -46,7 +47,7 @@ struct Matrix3
         return r;
     }
 
-    static Matrix3 translation(const Vector2 &xy)
+    static Matrix3 translate(const Vector2 &xy)
     {
         Matrix3 r = identity();
         r.m[2][0] = xy.x;

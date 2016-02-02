@@ -13,22 +13,25 @@ Esmeralda Salamone, esmes@aie.edu.au, 1/25/2016
 For instructional use.
 */
 
-
 __declspec(align(32)) struct mat3
 {
     union
     {
         vec3  c[3];
-        float m[9];
-        float mm[3][3];
+        struct
+        {
+            float m[9];
+        };
+        struct { float mm[3][3]; };
         struct
         {
             union { vec3 c1; vec2 right; };
             union { vec3 c2; vec2 up; };
             union { vec3 c3; vec2 position; };
         };
+        
     };
-
+  
     static constexpr mat3 identity();
 };
 

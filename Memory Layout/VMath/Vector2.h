@@ -11,13 +11,7 @@ struct Vector2
     Vector2(float a_x, float a_y)
         : x(a_x), y(a_y) {}
 
-    float magnitude() const { sqrtf(x*x + y*y); }
-
-    Vector2 normal() const
-    {
-        //assert(magnitude() != 0 && "Divide by Zero");
-        return *this / magnitude();
-    }
+    float magnitude() const { return sqrtf(x*x + y*y); }
 };
 
 // Direction Between Vectors:
@@ -53,4 +47,10 @@ inline bool operator==(const Vector2 &lhs, const Vector2 &rhs)
 
     //return fabsf(rhs.x - lhs.x) < FLT_EPSILON &&
     //       fabsf(rhs.y - lhs.y) < FLT_EPSILON;
+}
+
+Vector2 normal(Vector2 &a)
+{
+    //assert(magnitude() != 0 && "Divide by Zero");
+    return a / a.magnitude();
 }

@@ -11,13 +11,9 @@ struct Vector3
     Vector3(float a_x, float a_y, float a_z)
         : x(a_x), y(a_y), z(a_z) {}
 
-    float magnitude() const { sqrtf(x*x + y*y + z*z); }
+    float magnitude() const { return sqrtf(x*x + y*y + z*z); }
 
-    Vector3 normal() const
-    {
-        //assert(magnitude() != 0 && "Divide by Zero");
-        return *this / magnitude();
-    }
+
 };
 
 // Direction Between Vectors:
@@ -54,4 +50,10 @@ inline bool operator==(const Vector3 &lhs, const Vector3 &rhs)
 
     //return fabsf(rhs.x - lhs.x) < FLT_EPSILON &&
     //       fabsf(rhs.y - lhs.y) < FLT_EPSILON;
+}
+
+Vector3 normal(const Vector3 &a)
+{
+    //assert(magnitude() != 0 && "Divide by Zero");
+    return a / a.magnitude();
 }

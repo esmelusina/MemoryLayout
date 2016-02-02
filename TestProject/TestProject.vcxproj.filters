@@ -13,25 +13,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Math">
-      <UniqueIdentifier>{7a803756-207e-41a3-b45e-0a66e04e91c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Math\ReferenceAid">
-      <UniqueIdentifier>{1c05357a-4fa6-431c-b625-828a0811ba2f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VMath.h">
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="sfw.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
+    <Library Include="sfw_d.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sfwdraw.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VMath\Matrix3.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
-    </ClInclude>
-    <ClInclude Include="VMath\Vector2.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
-    </ClInclude>
-    <ClInclude Include="VMath\Vector3.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

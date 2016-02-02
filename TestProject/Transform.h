@@ -9,7 +9,6 @@ class Transform
     Vector2 position, scale;
     float angle;
     // Matrix3 local; Updates whenever a setter is used
-
 public:
      Transform();
     ~Transform();

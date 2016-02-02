@@ -25,13 +25,13 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VMath\Matrix3.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="VMath\Vector2.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="VMath\Vector3.h">
-      <Filter>Header Files\Math\ReferenceAid</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

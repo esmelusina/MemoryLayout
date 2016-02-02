@@ -5,7 +5,8 @@ Very Important Things:
 	mat3 : multiplication, translation, rotation, scale, identity
 
 	Shapes/collision : AABB, Circle, DrawAABB, DrawCircle
-    
+        
+    ***Project with drawing integration!
 ------------------
 First, we can make it so that our math library outputs a static library.
     
@@ -22,6 +23,8 @@ Then access the properties of the new project so that it links correctly to your
     properties->linker->additional library directories-> (Match it to the math library's Properties->General Configuration->Output Directory)
     properties->linker->Input->Additional Dependencies (add the name of the .lib file)
     properties->C/C++->additional include directories-> The Math libraries project directory
+    
+You can also adjust the build dependencies so that the new project depends on the library.
 
 You should then test it out to make sure that everything is accessible and works!
 ------------------	

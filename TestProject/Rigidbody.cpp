@@ -14,7 +14,7 @@ void Rigidbody::addForce(const Vector2 &a)
 void Rigidbody::integrate(Transform *t, float dt)
 {
 
-    jerk         = force / mass - acceleration;
+    jerk         = force / mass - acceleration; // Jerk is optional!
     acceleration = acceleration + jerk * dt; // acceleration = force/mass;
     velocity     = velocity + acceleration * dt;    
     t->setPosition(t->getPosition() + velocity * dt);

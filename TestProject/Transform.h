@@ -2,6 +2,7 @@
 #include "VMath.h"
 #include <list>
 
+
 class Transform
 {
     Transform *e_parent;
@@ -9,6 +10,7 @@ class Transform
     Vector2 position, scale;
     float angle;
     // Matrix3 local; Updates whenever a setter is used
+
 public:
      Transform();
     ~Transform();
@@ -23,5 +25,8 @@ public:
     
     Vector2 getPosition () const;
     Vector2 getScale    () const;
-    float   getAngle    () const;    
+    float   getAngle    () const;
+
+    Vector2 getRight() const;
+    Vector2 getUp() const;
 };

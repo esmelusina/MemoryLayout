@@ -12,6 +12,11 @@ struct Vector2
         : x(a_x), y(a_y) {}
 
     float magnitude() const { return sqrtf(x*x + y*y); }
+
+    static Vector2 fromAngle(float a)
+    {
+        return{ cosf(a), sinf(a) };
+    }
 };
 
 // Direction Between Vectors:
@@ -24,11 +29,25 @@ inline Vector2 operator-(const Vector2  &lhs, const Vector2 &rhs)
     return Vector2(lhs.x - rhs.x, lhs.y - rhs.y);
 }
 
+inline Vector2 perp(const Vector2  &a)
+{
+    return Vector2(-a.y, a.x);
+}
+
+
+inline Vector2 operator+(const Vector2  &lhs, const Vector2 &rhs)
+{
+    return Vector2(lhs.x + rhs.x, lhs.y + rhs.y);
+}
+
 inline Vector2 operator/(const Vector2 &lhs, float rhs)
 {
     return Vector2(lhs.x / rhs, lhs.y / rhs);
 }
-
+inline Vector2 operator*(const Vector2 &lhs, float rhs)
+{
+    return Vector2(lhs.x * rhs, lhs.y * rhs);
+}
 // Dot production tells us how much one vector extends
 // in the direction of another vector
 inline float dot(const Vector2 &lhs, const Vector2 &rhs)

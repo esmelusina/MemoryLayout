@@ -1,8 +1,10 @@
 #include "Transform.h"
 
 Transform::Transform()
-    :e_parent(nullptr), scale({ 1,1 }),
-     position({0,0}),   angle(0) { }
+    : e_parent(nullptr),
+      scale({ 1,1 }),
+      position({0,0}),
+      angle(0) { }
 
 
 Transform::~Transform()
@@ -66,4 +68,14 @@ Vector2 Transform::getScale() const
 float Transform::getAngle() const
 {
     return angle;
+}
+
+Vector2 Transform::getRight() const
+{
+    return Vector2::fromAngle(angle);
+}
+
+Vector2 Transform::getUp() const
+{
+    return perp(Vector2::fromAngle(angle));
 }

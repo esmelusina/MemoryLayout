@@ -13,7 +13,7 @@ Esmeralda Salamone, esmes@aie.edu.au, 1/25/2016
 For instructional use.
 */
 
-__declspec(align(32)) struct mat3
+struct mat3
 {
     union
     {

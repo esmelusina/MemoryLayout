@@ -13,6 +13,6 @@ public:
 
     Rigidbody();
     void addForce(const Vector2 &);
-    void addTorque(const Vector2 &);
+    void addTorque(float);
     void integrate(Transform *, float dt);
 };

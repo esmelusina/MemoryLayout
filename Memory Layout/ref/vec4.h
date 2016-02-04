@@ -14,7 +14,7 @@ For instructional use.
 */
 
 
-__declspec(align(32)) struct vec4
+struct vec4
 {
 	union
 	{

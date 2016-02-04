@@ -13,7 +13,7 @@ For instructional use.
 */
 
     
-__declspec(align(32)) struct vec3
+struct vec3
 {
 	union
 	{

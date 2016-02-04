@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Memory Layout", "Memory Layout\Memory Layout.vcxproj", "{81849A23-88CE-4581-B2DE-D8531B835BB5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VMath", "Memory Layout\Memory Layout.vcxproj", "{81849A23-88CE-4581-B2DE-D8531B835BB5}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestProject", "TestProject\TestProject.vcxproj", "{9E363005-2C7A-401F-BAB4-A5670774053D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{81849A23-88CE-4581-B2DE-D8531B835BB5} = {81849A23-88CE-4581-B2DE-D8531B835BB5}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ESmath", "ESmath\ESmath.vcxproj", "{F82C0095-A7DE-4535-AC56-D822BF364B4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,14 @@ Global
 		{9E363005-2C7A-401F-BAB4-A5670774053D}.Release|x64.Build.0 = Release|x64
 		{9E363005-2C7A-401F-BAB4-A5670774053D}.Release|x86.ActiveCfg = Release|Win32
 		{9E363005-2C7A-401F-BAB4-A5670774053D}.Release|x86.Build.0 = Release|Win32
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Debug|x64.ActiveCfg = Debug|x64
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Debug|x64.Build.0 = Debug|x64
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Debug|x86.ActiveCfg = Debug|Win32
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Debug|x86.Build.0 = Debug|Win32
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Release|x64.ActiveCfg = Release|x64
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Release|x64.Build.0 = Release|x64
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Release|x86.ActiveCfg = Release|Win32
+		{F82C0095-A7DE-4535-AC56-D822BF364B4C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

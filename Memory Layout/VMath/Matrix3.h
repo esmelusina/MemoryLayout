@@ -35,7 +35,7 @@ struct Matrix3
     {
         Matrix3 r = identity();
         r.c[0] = Vector3( cosf(angle), sinf(angle), 0);
-        r.c[1] = Vector3(-sinf(angle), cosf(angle), 0);
+        r.c[1] = Vector3( -sinf(angle), cosf(angle), 0);
         return r;
     }
 

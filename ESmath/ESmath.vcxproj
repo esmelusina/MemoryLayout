@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="declmat.h" />
     <ClInclude Include="tmat.h" />
     <ClInclude Include="tvec.h" />
   </ItemGroup>

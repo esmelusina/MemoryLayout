@@ -5,13 +5,13 @@
 #define EPSILON 0.0001f
 
 template<bool> struct X {};
-template<> struct X<true> { float &x; X(float &a) :x(a) {} };
+template<> struct X<true> { float &x; X(float &a) : x(a) {} };
 template<bool> struct Y {};
-template<> struct Y<true> { float &y; Y(float &a) :y(a) {} };
+template<> struct Y<true> { float &y; Y(float &a) : y(a) {} };
 template<bool> struct Z {};
-template<> struct Z<true> { float &z; Z(float &a) :z(a) {} };
+template<> struct Z<true> { float &z; Z(float &a) : z(a) {} };
 template<bool> struct W {};
-template<> struct W<true> { float &w; W(float &a) :w(a) {} };
+template<> struct W<true> { float &w; W(float &a) : w(a) {} };
 
 template<unsigned SIZE> struct tvec : X<SIZE >= 1>, Y<SIZE >= 2>, Z<SIZE >= 3>, W<SIZE >= 4>
 {
@@ -39,7 +39,7 @@ public:
         m_data[2] = z;
     }
 
-    template<bool B = SIZE == 4, typename std::enable_if<B, int>::type = 0>
+    template<bool B = SIZE >= 4, typename std::enable_if<B, int>::type = 0>
     tvec(float x = 0, float y = 0, float z = 0, float w = 0) : X<B>(m_data[0]), Y<B>(m_data[1]), Z<B>(m_data[2]), W<B>(m_data[3])
     {
         m_data[0] = x;
@@ -66,6 +66,12 @@ public:
     float &operator[](unsigned idx)       { return m_data[idx]; }
     float  operator[](unsigned idx) const { return m_data[idx]; }
 
+    tvec &operator=(const tvec &a)
+    {
+        for (int i = 0; i < SIZE; ++i)
+            m_data[i] = a[i];
+        return *this;
+    }
     tvec &operator-=(const tvec &a)
     {
         for (unsigned i = 0; i < SIZE; ++i)
@@ -112,12 +118,14 @@ public:
     static constexpr unsigned size() { return SIZE; }
     explicit operator float*()       { return m_data; }    
 
-    //template<unsigned O_SIZE>
-    //operator tvec<O_SIZE>& { return *((tvec<O_SIZE>*)m_data); }
-
-    template<unsigned SUB_SIZE, typename VECT = std::enable_if<SUB_SIZE <= SIZE, tvec<SUB_SIZE>>::type> VECT &sub()
+    template<unsigned SUB_SIZE, unsigned OFFSET = 0, typename VECT = std::enable_if<SUB_SIZE <= SIZE, tvec<SUB_SIZE>>::type> VECT &sub()
     {
-        return *((tvec<SUB_SIZE>*) this);
+        return *((tvec<SUB_SIZE>*) m_data[OFFSET];
+    }
+
+    template<unsigned SUB_SIZE, unsigned OFFSET = 0, typename VECT = std::enable_if<SUB_SIZE <= SIZE, tvec<SUB_SIZE>>::type> VECT sub() const
+    {
+        return *((tvec<SUB_SIZE>*) m_data[OFFSET];
     }
 
     template<unsigned SUB_SIZE>

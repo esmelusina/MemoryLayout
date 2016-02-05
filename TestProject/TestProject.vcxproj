@@ -133,8 +133,11 @@
     <Library Include="sfw_d.lib" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="component.h" />
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="sfwdraw.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

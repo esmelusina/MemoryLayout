@@ -33,7 +33,10 @@
     <ClInclude Include="VMath\Vector2.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="VMath\Shapes.h">
+    <ClInclude Include="Shapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

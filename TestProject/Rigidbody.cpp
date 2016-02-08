@@ -1,4 +1,5 @@
 #include "Rigidbody.h"
+#include "Transform.h"
 
 Rigidbody::Rigidbody() :
     acceleration({0,0}), velocity({0,0}), mass(1),

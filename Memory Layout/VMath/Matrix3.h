@@ -54,8 +54,6 @@ struct Matrix3
         r.m[2][1] = xy.y;
         return r;
     }
-
-    //Matrix3 &operator*=(const Matrix3 &rhs);
 };
 
 Vector3 operator*(const Matrix3 &_A, const Vector3 &b);

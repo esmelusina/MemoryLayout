@@ -1,11 +1,10 @@
 Very Important Things:
 
-	vec2 : normal, magnitude, dot product vector ops (-, +), scalar (*, /), comparison (==, !=)
-
+	vec2 : normal, magnitude, dot product, vector ops (-, +), scalar (*, /), comparison (==, !=), convert to vec3 for multiplying with mat3
 	mat3 : multiplication, translation, rotation, scale, identity
-
-	Shapes/collision : AABB, Circle, DrawAABB, DrawCircle
-        
+	Shapes/collision : AABB, Circle, Draw(const AABB &), DrawCircle(const Circle &)        
+    Components: Transform, Rigidbody, Collider       
+                
     ***Project with drawing integration!
 ------------------
 First, we can make it so that our math library outputs a static library.

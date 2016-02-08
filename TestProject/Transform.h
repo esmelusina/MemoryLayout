@@ -27,6 +27,6 @@ public:
     Vector2 getScale    () const;
     float   getAngle    () const;
 
-    Vector2 getRight() const;
-    Vector2 getUp() const;
+    Vector2 getRight()     const;
+    Vector2 getUp()        const;
 };

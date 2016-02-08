@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="VMath\Matrix3.h" />
+    <ClInclude Include="VMath\Shapes.h" />
     <ClInclude Include="VMath\Vector2.h" />
     <ClInclude Include="VMath\Vector3.h" />
     <ClInclude Include="VMath.h" />

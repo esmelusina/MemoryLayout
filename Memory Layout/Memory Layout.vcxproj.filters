@@ -33,6 +33,9 @@
     <ClInclude Include="VMath\Vector2.h">
       <Filter>Header Files\Math</Filter>
     </ClInclude>
+    <ClInclude Include="VMath\Shapes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VMath\Matrix3.cpp">

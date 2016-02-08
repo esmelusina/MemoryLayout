@@ -13,6 +13,8 @@ struct Vector2
 
     float magnitude() const { return sqrtf(x*x + y*y); }
 
+    float angle() const { return atan2f(y, x); }
+
     static Vector2 fromAngle(float a)
     {
         return{ cosf(a), sinf(a) };

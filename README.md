@@ -10,6 +10,7 @@ VERY IMPORTANT THINGS:
     Components: Transform (Matrix Hierarchy), Rigidbody (Linear Motion), Collider (Intersections)       
                 
     ***Project with drawing integration!
+    
 ------------------
 First, we can make it so that our math library outputs a static library.
     

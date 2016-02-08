@@ -21,6 +21,10 @@ struct Matrix3
         return r;
     }
     
+    float determinant();
+
+    Matrix3 inverse();
+
     static Matrix3 identity()
     {
         Matrix3 r;

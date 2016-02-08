@@ -4,8 +4,8 @@
 
 //Different shapes of varying utility.
 
-// note that this isn't guaranteed to be a convex hull- needs an
-// algorithm to test it.
+// note that this isn't guaranteed to be a convex hull-
+// technically needs an algorithm to test it.
 struct ConvexHull { std::vector<Vector2> verts;                  };
 
 struct Ray        { Vector2 position, direction; float length;   };

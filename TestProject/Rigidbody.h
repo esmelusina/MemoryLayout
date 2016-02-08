@@ -4,10 +4,12 @@
 class Rigidbody
 {
 public:
-    Vector2 velocity, acceleration, force, jerk;
-    float mass, drag;
+    float mass;
 
-    float angularVelocity, angularAcceleration, torque;
+    Vector2 velocity, acceleration, force, jerk;
+    float drag;
+
+    float angularVelocity, angularAcceleration, torque, angularJerk;
     float angularDrag;
 
     Rigidbody();

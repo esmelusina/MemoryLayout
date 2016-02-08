@@ -1,9 +1,13 @@
-Very Important Things:
+VERY IMPORTANT THINGS:
+    Look at VMath and Memory Layout for examples!
+        VMath contains 'pure math' concepts.
+        Memory Layout contains data structures that give us a layer of abstraction from the maths.
 
 	vec2 : normal, magnitude, dot product, vector ops (-, +), scalar (*, /), comparison (==, !=), convert to vec3 for multiplying with mat3
 	mat3 : multiplication, translation, rotation, scale, identity
-	Shapes/collision : AABB, Circle, Draw(const AABB &), DrawCircle(const Circle &)        
-    Components: Transform, Rigidbody, Collider       
+	Shapes/collision : AABB, Circle, Draw(const AABB &), DrawCircle(const Circle &)
+    
+    Components: Transform (Matrix Hierarchy), Rigidbody (Linear Motion), Collider (Intersections)       
                 
     ***Project with drawing integration!
 ------------------

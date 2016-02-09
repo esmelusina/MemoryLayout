@@ -30,7 +30,7 @@ Circle operator*(const Matrix3 &m, const Circle &a)
     ret.position = (m * Vector3(a.position.x,a.position.y,1)).xy;
 
     Vector3 xrad(a.radius,0,0);
-    Vector3 yrad(0,0,a.radius);
+    Vector3 yrad(0, a.radius,0);
 
     ret.radius = fmaxf((m*xrad).magnitude(), (m*yrad).magnitude());
 
@@ -40,16 +40,10 @@ Circle operator*(const Matrix3 &m, const Circle &a)
 
 Ray operator*(const Matrix3 &m, const Ray &a)
 {
-    Vector3 dir(a.direction.x, a.direction.y, 0);
+    Vector3 dir = Vector3(a.direction.x, a.direction.y, 0) * a.length;
     Vector3 pos(a.position.x, a.position.y, 1);
-    dir = dir * a.length;
-    
-    Ray ret = { (m * pos).xy, (m * dir).xy };
 
-    ret.length = ret.direction.magnitude();
-    ret.direction = normal(ret.direction);
-
-    return ret;
+    return{ (m * pos).xy, normal((m * dir).xy), dir.magnitude() };
 }
 
 Plane operator*(const Matrix3 &m, const Plane &a)
@@ -57,9 +51,7 @@ Plane operator*(const Matrix3 &m, const Plane &a)
     Vector3 nor(a.normal.x, a.normal.y, 0);
     Vector3 pos(a.position.x, a.position.y, 1);
 
-    Plane ret = { (m * pos).xy,(m * nor).xy};
-
-    return ret;
+    return{ (m * pos).xy,(m * nor).xy };
 }
 
 ConvexHull operator*(const Matrix3 &m, const ConvexHull &a)

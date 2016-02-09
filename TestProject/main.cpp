@@ -22,11 +22,11 @@ _mat4 mat3to4(float *m, float Z)
 int main()
 {
 
-        AABB j = { { 0,0 },{ 4,3 } };
-        Circle C = { {0,0},{2} };
-        Matrix3 q = Matrix3::translate({1,1}) * Matrix3::rotate(3.14159265359/2) * Matrix3::scale({ 2,1 });
+        Circle C = { {0,1},{2} };
+        AABB j = { {0,1}, {3,4} };
+        Matrix3 q = Matrix3::translate({ 1,1 }) * Matrix3::rotate(3.14159265359 / 2);// */ *Matrix3::scale({ 2,1 });
         q * C;
-        q*j;
+        q * j;
 
 
 
@@ -45,18 +45,17 @@ int main()
     Matrix3 mat;
 
     float speed = 400;
-    float angularSpeed = 15;
+    float angularSpeed = 40;
     float x = 400, y = 400, angle = 0;
 
     while (sfw::stepContext())
     {
         //if (sfw::getKey('S')) rigidbody1.addForce({ 0, -speed }); 
-        if (sfw::getKey('W'))
-            rigidbody1.addForce(transform1.getRight() * speed);
+        if (sfw::getKey('W')) rigidbody1.addForce(transform1.getRight() * speed);
         //if (sfw::getKey('A')) rigidbody1.addForce({ -speed, 0 }); 
         //if (sfw::getKey('D')) rigidbody1.addForce({  speed, 0 }); 
-        if (sfw::getKey('Q')) angle += sfw::getDeltaTime() * angularSpeed;
-        if (sfw::getKey('E')) angle -= sfw::getDeltaTime() * angularSpeed;
+        if (sfw::getKey('Q')) rigidbody1.addTorque(angularSpeed);
+        if (sfw::getKey('E')) rigidbody1.addTorque(-angularSpeed);
 
         // Transformation hierarchy
         transform1.setAngle(angle);

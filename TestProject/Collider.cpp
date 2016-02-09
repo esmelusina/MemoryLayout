@@ -1,3 +1,4 @@
+/*
 #include "Collider.h"
 #include "Transform.h"
 
@@ -54,4 +55,4 @@ CollisionData EvaluateCollision(const Transform &at, const Collider &ac,
         return iTest(t_lhs.getGlobalTransform() * lhs.ray,
                      t_rhs.getGlobalTransform() * rhs.plane);
     }
-}
+}*/

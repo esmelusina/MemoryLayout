@@ -2,18 +2,24 @@
 #include <cmath>
 #include <cassert>
 #include <cfloat>
+#include "Vector2.h"
 
 struct Vector3
 {
-    float x, y, z;
-
+    union
+    {
+        float v[3];
+        struct { float x, y, z; };
+        Vector2 xy;
+    };
     Vector3() {}
     Vector3(float a_x, float a_y, float a_z)
         : x(a_x), y(a_y), z(a_z) {}
 
     float magnitude() const { return sqrtf(x*x + y*y + z*z); }
 
-
+    float &operator[](unsigned idx)       { return v[idx]; }
+    float  operator[](unsigned idx) const { return v[idx]; }
 };
 
 // Direction Between Vectors:
@@ -29,6 +35,11 @@ inline Vector3 operator-(const Vector3  &lhs, const Vector3 &rhs)
 inline Vector3 operator/(const Vector3 &lhs, float rhs)
 {
     return Vector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+}
+
+inline Vector3 operator*(const Vector3 &lhs, float rhs)
+{
+    return{lhs.x*rhs,lhs.y*rhs,lhs.z*rhs };
 }
 
 // Dot production tells us how much one vector extends

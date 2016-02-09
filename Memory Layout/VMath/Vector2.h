@@ -5,8 +5,11 @@
 
 struct Vector2
 {
-    float x, y;
-
+    union
+    {
+        struct { float x, y; };
+        float v[2];
+    };
     Vector2() {}
     Vector2(float a_x, float a_y)
         : x(a_x), y(a_y) {}
@@ -14,6 +17,9 @@ struct Vector2
     float magnitude() const { return sqrtf(x*x + y*y); }
 
     float angle() const { return atan2f(y, x); }
+
+    float &operator[](unsigned idx) { return v[idx]; }
+    float  operator[](unsigned idx) const { return v[idx]; }
 
     static Vector2 fromAngle(float a)
     {

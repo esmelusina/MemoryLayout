@@ -12,6 +12,9 @@ struct Matrix3
         Vector3 c[3];
     };
 
+    Vector3  operator[](unsigned idx) const { return c[idx]; }
+    Vector3 &operator[](unsigned idx)       { return c[idx]; }
+
     Matrix3 transpose() const
     {
         Matrix3 r;

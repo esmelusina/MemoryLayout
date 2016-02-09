@@ -1,51 +1,32 @@
 #pragma once
-#include <initializer_list>
-#include <type_traits>
-
-/*
-    vec.swizzle<1,2,3,1,2,3>();
+#include <array>
 
 
-*/
-
-template<unsigned N, typename T = float>
-struct tvec
+template<unsigned S, typename T, bool>
+class rvec
 {
-    template<unsigned i, unsigned ...iargs>
-    tvec<sizeof...(iargs)> swizzle() const;
+    std::array<T, S> data;
+public:
+    T &operator[] (unsigned idx)       { return data[idx]; }
+    T  operator[] (unsigned idx) const { return data[idx]; }
 };
 
 
-template<unsigned N, typename T>
-template<unsigned i, unsigned ...iargs>
-inline tvec<sizeof...(iargs)> tvec<N, T>::swizzle() const
+
+template<unsigned S, typename T>
+class rvec<S,T,true>
 {
-    return tvec<sizeof...(iargs)>();
-}
+    std::array<T*, S> data;
+public:
+    T &operator[] (unsigned idx)       { return *data[idx]; }
+    T  operator[] (unsigned idx) const { return *data[idx]; }
+};
 
 
 
-//template<unsigned N, typename T = float>
-//struct tvec
-//{
-//    T*  p_data[N]; 
-//    T   m_data[N];
-//
-//    template<unsigned S>
-//    tvec<S + N> concat(const tvec<S> &a) const;
-//
-//    template<unsigned S, unsigned I, unsigned...i_args>
-//    tvec<S> swizzle() const;
-//};
-//
-//
-//template<unsigned N, typename T>
-//template<unsigned S, unsigned I, unsigned ...i_args>
-//inline tvec<S> tvec<N, T>::swizzle() const
-//{
-//    tvec<1, T> ret;
-//
-//    ret.m_data[0] = m_data[I];
-//    ret.concat(swizzle<S,i_args...>());
-//}
-
+template<unsigned S, typename T = float, bool REF = false>
+class tvec : rvec<S,T,REF>
+{
+    tvec<S, T,  true> swizzle();
+    tvec<S, T, false> swizzle() const;
+};

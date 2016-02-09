@@ -10,7 +10,7 @@ struct ConvexHull { std::vector<Vector2> verts;                  };
 
 struct Ray        { Vector2 position, direction; float length;   };
 struct Plane      { Vector2 position, normal;                    };
-struct Circle     { Vector2 position; float r;                   };
+struct Circle     { Vector2 position; float radius;              };
 struct AABB       { Vector2 position, halfextents;
                     Vector2 min() const, max() const;            };
 

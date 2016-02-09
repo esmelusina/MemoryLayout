@@ -2,6 +2,7 @@
 #include "VMath.h"
 #include "Transform.h"
 #include "Rigidbody.h"
+#include "Shapes.h"
 
 // Replace with your mat4 potentially
 struct _mat4
@@ -20,6 +21,18 @@ _mat4 mat3to4(float *m, float Z)
 
 int main()
 {
+
+        AABB j = { { 0,0 },{ 4,3 } };
+        Circle C = { {0,0},{2} };
+        Matrix3 q = Matrix3::translate({1,1}) * Matrix3::rotate(3.14159265359/2) * Matrix3::scale({ 2,1 });
+        q * C;
+        q*j;
+
+
+
+
+
+
     sfw::initContext();
     int  handle = sfw::loadTextureMap("./dino.png");
 
